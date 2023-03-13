@@ -1,0 +1,11 @@
+.idea
+.vscode
+
+log.log
+log.txt
+config
+Makefile
+drone-runner-exec
+# Dependency directories (remove the comment below to include it)
+# vendor/
+.DS_Store
