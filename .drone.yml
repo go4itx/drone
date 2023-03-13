@@ -1,6 +1,6 @@
 kind: pipeline
 type: exec
-name: default
+name: backend
 
 platform:
   os: darwin
@@ -12,5 +12,42 @@ clone:
 steps:
 - name: greeting
   commands:
-  - echo hello world
-  - say "你好呀"
+  - echo hello backend
+
+---
+kind: pipeline
+type: exec
+name: frontend
+
+platform:
+  os: darwin
+  arch: amd64
+
+clone:
+  disable: true
+
+steps:
+- name: greeting
+  commands:
+  - echo hello frontend
+
+---
+kind: pipeline
+type: exec
+name: final
+
+platform:
+  os: darwin
+  arch: amd64
+
+clone:
+  disable: true
+
+steps:
+- name: final
+  commands:
+  - echo "The previous tasks have been completed"
+
+depends_on:
+- backend
+- frontend
