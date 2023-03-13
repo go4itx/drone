@@ -1,6 +1,6 @@
 kind: pipeline
 type: exec
-name: greeting2
+name: default
 
 platform:
   os: darwin
@@ -14,8 +14,3 @@ steps:
   commands:
   - echo hello world
   - say "你好呀"
-
-- name: greeting2
-  commands:
-  - echo hello world2
-  - say "哈哈哈哈哈"
